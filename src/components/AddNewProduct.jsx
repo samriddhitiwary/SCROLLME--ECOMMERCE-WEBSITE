@@ -1,8 +1,16 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Button, Container, TextField, Typography, Snackbar } from '@mui/material';
-import { FaTag, FaDollarSign, FaBoxOpen, FaPalette, FaPaintBrush, FaRegistered, FaEdit } from 'react-icons/fa';
-import { useToast, Box } from '@chakra-ui/react';
+import { Button, Container, TextField, Typography, Snackbar, Box } from '@mui/material';
+import {
+  Tag as TagIcon,
+  AttachMoney as PriceIcon,
+  Inventory as StockIcon,
+  Palette as MaterialIcon,
+  Brush as ColorIcon,
+  VerifiedUser as BrandIcon,
+  Description as DescriptionIcon
+} from '@mui/icons-material';
+import { useToast } from '@chakra-ui/react';
 import styled from 'styled-components';
 import Navbar from '../components/Navbar';
 import Announcement from './Announcement';
@@ -15,6 +23,15 @@ const StyledContainer = styled(Container)`
   box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
   padding: 2rem;
   margin-top: 2rem;
+`;
+
+const StyledBox = styled(Box)`
+  background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), 
+  url('https://images.pexels.com/photos/6984650/pexels-photo-6984650.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940') center;
+  background-size: cover;
+  background-attachment: fixed;
+  min-height: 100vh;
+  padding-top: 56px;
 `;
 
 const AddNewProduct = () => {
@@ -82,15 +99,7 @@ const AddNewProduct = () => {
     <>
       <Announcement />
       <Navbar />
-      <Box
-        sx={{
-          background: `linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), url('https://images.pexels.com/photos/6984650/pexels-photo-6984650.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940') center`,
-          backgroundSize: 'cover',
-          backgroundAttachment: 'fixed',
-          minHeight: '100vh',
-          pt: '56px',
-        }}
-      >
+      <StyledBox>
         <StyledContainer maxWidth='sm'>
           <Typography variant='h4' align='center' gutterBottom>
             ADD NEW PRODUCT
@@ -106,7 +115,7 @@ const AddNewProduct = () => {
               onChange={inputChangeHandler}
               required
               InputProps={{
-                startAdornment: <FaTag />,
+                startAdornment: <TagIcon />,
               }}
             />
             <TextField
@@ -119,7 +128,7 @@ const AddNewProduct = () => {
               onChange={inputChangeHandler}
               required
               InputProps={{
-                startAdornment: <FaDollarSign />,
+                startAdornment: <PriceIcon />,
               }}
             />
             <TextField
@@ -132,7 +141,7 @@ const AddNewProduct = () => {
               onChange={inputChangeHandler}
               required
               InputProps={{
-                startAdornment: <FaBoxOpen />,
+                startAdornment: <StockIcon />,
               }}
             />
             <TextField
@@ -144,7 +153,7 @@ const AddNewProduct = () => {
               onChange={inputChangeHandler}
               required
               InputProps={{
-                startAdornment: <FaPalette />,
+                startAdornment: <MaterialIcon />,
               }}
             />
             <TextField
@@ -156,7 +165,7 @@ const AddNewProduct = () => {
               onChange={inputChangeHandler}
               required
               InputProps={{
-                startAdornment: <FaPaintBrush />,
+                startAdornment: <ColorIcon />,
               }}
             />
             <TextField
@@ -168,7 +177,7 @@ const AddNewProduct = () => {
               onChange={inputChangeHandler}
               required
               InputProps={{
-                startAdornment: <FaRegistered />,
+                startAdornment: <BrandIcon />,
               }}
             />
             <TextField
@@ -182,7 +191,7 @@ const AddNewProduct = () => {
               multiline
               rows={4}
               InputProps={{
-                startAdornment: <FaEdit />,
+                startAdornment: <DescriptionIcon />,
               }}
             />
             <TextField
@@ -195,7 +204,7 @@ const AddNewProduct = () => {
               onChange={inputChangeHandler}
               required
               InputProps={{
-                startAdornment: <FaBoxOpen />,
+                startAdornment: <StockIcon />,
               }}
             />
             <TextField
@@ -208,7 +217,7 @@ const AddNewProduct = () => {
               onChange={inputChangeHandler}
               required
               InputProps={{
-                startAdornment: <FaBoxOpen />,
+                startAdornment: <StockIcon />,
               }}
             />
             <TextField
@@ -221,7 +230,7 @@ const AddNewProduct = () => {
               onChange={inputChangeHandler}
               required
               InputProps={{
-                startAdornment: <FaBoxOpen />,
+                startAdornment: <StockIcon />,
               }}
             />
             <TextField
@@ -233,7 +242,7 @@ const AddNewProduct = () => {
               onChange={inputChangeHandler}
               required
               InputProps={{
-                startAdornment: <FaBoxOpen />,
+                startAdornment: <StockIcon />,
               }}
             />
             <Button
@@ -251,7 +260,7 @@ const AddNewProduct = () => {
             </Button>
           </form>
         </StyledContainer>
-      </Box>
+      </StyledBox>
     </>
   );
 };

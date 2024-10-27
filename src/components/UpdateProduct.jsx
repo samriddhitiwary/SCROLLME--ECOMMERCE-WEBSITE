@@ -107,17 +107,18 @@ const UpdateProduct = () => {
       setTimeout(() => {
         navigate('/admin');
       }, 2000);
-    } catch (error) {
+    } catch (err) {
+      setErrorMessage(err.message || 'Error in Updating the product');
       toast({
         title: 'Error in Updating the product',
-        status: 'success',
+        status: 'error',
         duration: 5000,
         isClosable: true,
         position: 'top-right',
       });
     }
-    setErrorMessage(error);
   };
+  
 
   return (
     <ChakraProvider>
